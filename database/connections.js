@@ -23,12 +23,13 @@ module.exports = (query)=>{
             if(error){
                 reject(error);
             }else{
-                connections.query(query,(error,result)=>{
+                connections.query(query,(error,result,field)=>{
                     if(error){
                     //    console.log("ERRRRORR");
                         reject(error);
                     }else{
                         resolve(result);
+                       
                     }
                  //need this to release the query
                  connections.release();
